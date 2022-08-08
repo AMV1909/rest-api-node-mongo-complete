@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="div-form" id="div-form">
+            <h1>LOGIN</h1>
+            <form id="form">
+                <div class="text_field" id="email_field">
+                    <input type="text" name="email" id="email" required><label>Email</label>
+                    <span></span>
+                </div>
+                <div class="text_field" id="password_field">
+                    <input type="password" name="password" id="password" required><label>Contraseña</label>
+                    <span></span>
+                </div>
+                <div class="reset_password">
+                    <a class="links" href="#">¿Olvidó su Contraseña?</a>
+                </div>
+                <p id="response"></p>
+                <button type="button" onclick="check_email()">Ingresar</button>
+            </form>
+            <div class="no_account">
+                <a class="links" href="#">¿No tiene cuenta?</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/javascript/index.js"></script>
+</body>
+</html>
