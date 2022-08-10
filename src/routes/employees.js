@@ -8,9 +8,15 @@ import employeeSchema from "../models/employee.js"
 import "../database.js"
 import verifyToken from "../jwt/jwt.js"
 
+// Páginas
 router.get("/", (req, res) => res.render("index.ejs"))
 
-router.post("/", async (req, res) => {
+router.get("/register", (req, res) => res.render("register.ejs"))
+
+router.get("/functions", async (req, res) => res.render("functions.ejs"))
+
+// Lógica
+router.post("/employees", async (req, res) => {
     const employee = employeeSchema(req.body)
     employee.password = await crypto.createHash("sha256").update(req.body.password).digest("base64")
 
@@ -69,10 +75,6 @@ router.get("/employees/:id", verifyToken, async (req, res) => {
             res.sendStatus(403)
         }
     })
-})
-
-router.get("/functions", async (req, res) => {
-    res.render("Functions.ejs")
 })
 
 export {router}
